@@ -1,7 +1,80 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Prezentacja Zagrożeń i Ochrony Danych</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <header>
+        <h1>Prezentacja Zagrożeń i Ochrony Danych w Systemach Informatycznych</h1>
+    </header>
+    <nav>
+        <ul>
+            <li onclick="showTopic('zagrozenia')">Zagrożenia</li>
+            <li onclick="showTopic('ochrona')">Ochrona</li>
+        </ul>
+    </nav>
+    <div class="content" id="zagrozenia">
+        <h2>Zagrożenia w Systemach Informatycznych</h2>
+        <p>Tutaj znajdziesz informacje na temat różnych rodzajów zagrożeń w systemach informatycznych, takich jak ataki hakerskie, malware, phishing, itp.</p>
+    </div>
+    <div class="content" id="ochrona">
+        <h2>Metody Ochrony Danych</h2>
+        <p>W tej sekcji dowiesz się o różnych metodach ochrony danych, takich jak firewall, szyfrowanie, regularne aktualizacje oprogramowania, itp.</p>
+    </div>
+
+    <script>
+        function showTopic(topic) {
+            const topics = ["zagrozenia", "ochrona"];
+
+            topics.forEach(t => {
+                const element = document.getElementById(t);
+                if (t === topic) {
+                    element.classList.remove("hidden");
+                } else {
+                    element.classList.add("hidden");
+                }
+            });
+        }
+    </script>
 </body>
 </html>
